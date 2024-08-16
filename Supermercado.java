@@ -76,25 +76,36 @@ class Producto {
         return "Producto: " + item + "\nPago: $" + precio*cantidad; 
     }
 
+    public String getItem(){
+        return item;
+    }
+
+    public double getPrecio(){
+        return precio;
+    }
+
+    public int getCantidad(){
+        return cantidad;
+    }
+
 }
 
 class Transaccion extends Producto {
     
     private Caja nroCaja;
-    private double suma;
+    private double suma = 0;
 
     public Transaccion(String item, double precio, int cantidad, Caja nroCaja){
         super(item, precio, cantidad);
         this.nroCaja = nroCaja;
-        suma = 0;
     }
 
     public double sumador(double precio){
-        return suma += precio;
+        return this.suma += precio;
     }
 
     public String toString(){
-        return super.toString() + "\nTotal de la compra: $" + suma + "\nNro de Caja: " + nroCaja;
+        return super.toString() + "\nTotal de la compra: $" + suma + nroCaja.toString();
     }
     
 }
