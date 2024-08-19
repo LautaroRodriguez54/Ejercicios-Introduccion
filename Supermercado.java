@@ -9,7 +9,7 @@ class Humane {
     }
 
     public String toString() {
-        return "Nombre: " + nombre + "\nApellido: " + apellido;
+        return "Nombre: " + this.nombre + "\nApellido: " + this.apellido;
     }
 
 }
@@ -26,7 +26,7 @@ class Empleado extends Humane {
     }
 
     public String toString(){
-        return super.toString() + nroCaja.toString() + "\nSueldo: " + sueldo;
+        return super.toString() + this.nroCaja.toString() + "\nSueldo: " + this.sueldo;
     }
 
 }
@@ -40,9 +40,12 @@ class Caja {
     }
 
     public String toString(){
-        return "\nNro de Caja: " + nroCaja;
+        return "\nNro de Caja: " + this.nroCaja;
     }
 
+    public int getNroCaja(){
+        return this.nroCaja;
+    }
 }
 
 class Cliente extends Humane {
@@ -55,7 +58,7 @@ class Cliente extends Humane {
     }
 
     public String toString(){
-        return super.toString() + "\nDescuento mayorista: " + mayorista;
+        return super.toString() + "\nDescuento mayorista: " + this.mayorista;
     }
 
 }
@@ -73,39 +76,19 @@ class Producto {
     }
 
     public String toString(){
-        return "Producto: " + item + "\nPago: $" + precio*cantidad; 
+        return "Producto: " + this.item + "\nPago: $" + this.precio * this.cantidad; 
     }
 
     public String getItem(){
-        return item;
+        return this.item;
     }
 
     public double getPrecio(){
-        return precio;
+        return this.precio;
     }
 
     public int getCantidad(){
-        return cantidad;
+        return this.cantidad;
     }
 
-}
-
-class Transaccion extends Producto {
-    
-    private Caja nroCaja;
-    private double suma = 0;
-
-    public Transaccion(String item, double precio, int cantidad, Caja nroCaja){
-        super(item, precio, cantidad);
-        this.nroCaja = nroCaja;
-    }
-
-    public double sumador(double precio){
-        return this.suma += precio;
-    }
-
-    public String toString(){
-        return super.toString() + "\nTotal de la compra: $" + suma + nroCaja.toString();
-    }
-    
 }
