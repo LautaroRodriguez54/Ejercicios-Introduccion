@@ -19,55 +19,54 @@ public class Tarea1 {
             System.out.println("6: Pagar y salir");
 
             int choice1 = sc.nextInt();
-            int choice2 = 0;
+            int choice2;
 
             switch (choice1){
-                case 1: 
+                case 1 -> { 
                     System.out.println("¿Cuantas unidades desea llevar?");
                     choice2 =  sc.nextInt();
                     Producto product1 = new Producto("Tomate", 100, choice2);
                     total += product1.getPrecio() * product1.getCantidad();
                     product1.toString();
-                    break;
+                }
 
-                case 2:
+                case 2 -> {
                     System.out.println("¿Cuantas unidades desea llevar?");
                     choice2 =  sc.nextInt();
                     Producto product2 = new Producto("Cebolla", 75, choice2);
                     total += product2.getPrecio() * product2.getCantidad();
                     product2.toString();
-                    break;
+                }
 
-                case 3:
+                case 3 -> {
                     System.out.println("¿Cuantas unidades desea llevar?");
                     choice2 =  sc.nextInt();
                     Producto product3 = new Producto("Lechuga", 250, choice2);
                     total += product3.getPrecio() * product3.getCantidad();
                     product3.toString();
-                    break;
+                }
 
-                case 4:
+                case 4 -> {
                     System.out.println("¿Cuantas unidades desea llevar?");
                     choice2 =  sc.nextInt();
                     Producto product4 = new Producto("Papa", 50, choice2);
                     total += product4.getPrecio() * product4.getCantidad();
                     product4.toString();
-                    break;
+                }
 
-                case 5:
+                case 5 -> {
                     System.out.println("¿Cuantas unidades desea llevar?");
                     choice2 =  sc.nextInt();
                     Producto product5 = new Producto("Zanahoria", 150, choice2);
                     total += product5.getPrecio() * product5.getCantidad();
                     product5.toString();
-                    break;
+                }
 
-                case 6:
-                    flag1 = false;
-                    break;
+                case 6 -> flag1 = false;
 
             }
-
+            
+            sc.close();
         }
 
         //Ahora viene el pago

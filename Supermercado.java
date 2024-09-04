@@ -8,6 +8,7 @@ class Humane {
         this.apellido = apellido;
     }
 
+    @Override
     public String toString() {
         return "Nombre: " + this.nombre + "\nApellido: " + this.apellido;
     }
@@ -25,6 +26,7 @@ class Empleado extends Humane {
         this.sueldo = sueldo;
     }
 
+    @Override
     public String toString(){
         return super.toString() + this.nroCaja.toString() + "\nSueldo: " + this.sueldo;
     }
@@ -39,6 +41,7 @@ class Caja {
         this.nroCaja = nroCaja;
     }
 
+    @Override
     public String toString(){
         return "\nNro de Caja: " + this.nroCaja;
     }
@@ -57,6 +60,7 @@ class Cliente extends Humane {
         this.mayorista = mayorista;
     }
 
+    @Override
     public String toString(){
         return super.toString() + "\nDescuento mayorista: " + this.mayorista;
     }
@@ -75,6 +79,7 @@ class Producto {
         this.cantidad = cantidad;
     }
 
+    @Override
     public String toString(){
         return "Producto: " + this.item + "\nPago: $" + this.precio * this.cantidad; 
     }
